@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  FiUsers,
   FiBarChart2,
-  FiTruck,
   FiBriefcase,
   FiShield,
   FiGitBranch,
-  FiUser,
+  FiUsers,
+  FiFileText,
+  FiBox,
 } from "react-icons/fi";
 
 import ProjectCard from '../components/projectc-card';
@@ -26,53 +26,54 @@ interface Project {
 
 const Projects: React.FC = () => {
   const projects: Project[] = [
-    {
-      title: "Laboratory Incident Report",
-      company: "Audree Infotech",
-      description:
-        "Led frontend efforts for a CRM system with 10,000+ users. Modular Angular components and seamless .NET Core API integration.",
-      role: "Senior Frontend Developer",
-      techStack: ["Angular", ".NET Core", "SQL Server", "Azure DevOps"],
-      challenges: "Optimized large data rendering and implemented real-time alerts.",
-      tags: ["#Angular", "#.NET", "#Enterprise", "#Performance"],
-      icon: FiUsers,
-      gradient: "from-blue-500 to-purple-600",
-    },
-    {
-      title: "Warehouse Management System",
-      company: "Audree Infotech",
-      description:
-        "Designed backend infrastructure for tracking inventory, orders, and vendor coordination.",
-      role: "Backend Developer",
-      techStack: [".NET Core", "Web API", "SQL Server", "Azure"],
-      challenges: "Handled microservices, database tuning, and third-party APIs.",
-      tags: ["#.NET", "#Microservices", "#API", "#Azure"],
-      icon: FiTruck,
-      gradient: "from-orange-500 to-red-600",
-    },
+    
     {
       title: "Cost Of Capital",
       company: "Kroll",
       description:
-        "Built financial dashboard for processing millions of transactions with interactive charts and insights.",
+        `Implemented industry benchmarking for WACC, Cost of Equity, and capital estimates.
+Built real-time views for US and international financial metrics.`,
       role: "Full-Stack Developer",
-      techStack: ["React.js", "C#", "Entity Framework", "SQL Server"],
-      challenges: "Optimized APIs and real-time charting for dynamic financial data.",
-      tags: ["#React", "#Analytics", "#RealTime", "#FinTech"],
+      techStack: ["Angular", "C#", "Entity Framework", "SQL Server","kendo charts","kendo excel","Azure signalr"],
+      challenges: "Enhanced API efficiency and redesigned UI for fast, interactive financial charting.",
+      tags: ["#Angular", "#Analytics", "#RealTime", "#FinTech"],
       icon: FiBarChart2,
       gradient: "from-green-500 to-teal-600",
     },
     {
-      title: "HR Management Portal",
-      company: "PeopleFirst Corp",
+      title: "PCM (Market Approach)",
+      company: "Kroll",
       description:
         "Developed internal portal for employee data, payroll, and appraisals with strong access control.",
       role: "Full-Stack Developer",
-      techStack: ["Angular", ".NET Core", "Entity Framework", "Git"],
+      techStack: ["React js", "C#","Web API","SQL Server",".NET Core", "Entity Framework", "Git"],
       challenges: "Implemented secure roles, data flows, and compliance logic.",
-      tags: ["#Angular", "#Security", "#Workflow", "#Compliance"],
+      tags: ["#React", "#Analytics", "#RealTime", "##FinTech",],
       icon: FiBriefcase,
       gradient: "from-purple-500 to-pink-600",
+    },
+    {
+      title: "Laboratory Incident Report",
+      company: "Audree Infotech",
+      description:
+        "Digitized the complete Laboratory Incident Report workflow from initiation to approval, including PDF export for audits.",
+      role: "Full-Stack Developer",
+      techStack: ["Angular", ".NET Core","Entity Framework", "SQL Server", "Git","HTML-PDF"],
+      challenges: "Tackled challenges like manual tracking, approval delays, and audit readiness.",
+      tags: ["#Angular", "#.NET", "#Enterprise", "#Performance"],
+      icon: FiFileText ,
+      gradient: "from-blue-500 to-purple-600",
+    },
+    {
+      title: " Warehouse Management Portal System",
+      company: "Audree Infotech",
+      description:"Developed a Warehouse Management System to track inventory from entry to dispatch with batch creation, real-time visibility, and audit compliance.",
+      role: "Full-Stack Developer",
+      techStack: [".NET Core", "Web API","Entity Framework", "SQL Server", "Azure"],
+      challenges: "Handled dynamic approval workflows, full-cycle product traceability, and data consistency across modules.",
+      tags: ["#.NET", "#Angular", "#API", "#Azure"],
+      icon: FiBox,
+      gradient: "from-orange-500 to-red-600",
     },
   ];
 
@@ -110,7 +111,7 @@ const Projects: React.FC = () => {
           <div className="flex justify-center space-x-12 text-gray-500">
             <div className="flex flex-col items-center gap-3 group cursor-default">
               <div className="w-16 h-16 bg-gradient-to-br from-[#00FFC3] to-[#00A6FB] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                {FiUser({ className: "text-3xl text-white" })}
+                {FiUsers ({ className: "text-3xl text-white" })}
               </div>
               <span className="font-semibold group-hover:text-gray-300 transition-colors">
                 Team Collaboration

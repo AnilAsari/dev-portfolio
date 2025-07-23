@@ -49,9 +49,8 @@ const Skills: React.FC = () => {
         skills: [
           "SQL Server",
           "Entity Framework",
-          "T-SQL",
           "Database Design",
-          "Performance Optimization",
+          "Data Optimization",
         ],
       },
       {

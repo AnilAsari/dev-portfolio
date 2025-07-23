@@ -8,6 +8,7 @@ import {
   FiMail,
 } from "react-icons/fi";
 
+
 const Hero: React.FC = () => {
   try {
     const scrollToProjects = (): void => {
@@ -18,7 +19,12 @@ const Hero: React.FC = () => {
     };
 
     const downloadResume = (): void => {
-      alert("Resume download feature would be implemented with actual resume file");
+      const link = document.createElement("a");
+      link.href = "/assets/AnilAsari_Profile_d19e20c9.pdf"; // path inside public folder
+      link.download = "Anil_Asari_Resume.pdf"; // name for the user
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     };
 
     return (
@@ -31,7 +37,6 @@ const Hero: React.FC = () => {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
-           
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4">
               <span className="text-gradient">Anil Asari</span>
             </h1>
@@ -41,20 +46,27 @@ const Hero: React.FC = () => {
             </h2>
 
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Crafting scalable enterprise applications with .NET Core & Angular. 
-              5+ years of corporate experience building robust systems that power business growth.
+              Crafting scalable enterprise applications with .NET Core &
+              Angular. 5+ years of corporate experience building robust systems
+              that power business growth.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button onClick={scrollToProjects} className="btn-primary btn-glow-effect">
+            <button
+              onClick={scrollToProjects}
+              className="btn-primary btn-glow-effect"
+            >
               <span className="flex items-center gap-2">
                 Explore Projects
                 {FiArrowRight({ className: "text-lg" })}
               </span>
             </button>
 
-            <button onClick={downloadResume} className="btn-secondary btn-glow-effect">
+            <button
+              onClick={downloadResume}
+              className="btn-secondary btn-glow-effect"
+            >
               <span className="flex items-center gap-2">
                 {FiDownload({ className: "text-lg mr-2" })}
                 Download Resume

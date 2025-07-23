@@ -1,259 +1,342 @@
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap");
 
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    @layer base {
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #0D0D0D;
-        color: #F5F5F5;
-      }
-      .font-code {
-        font-family: 'Fira Code', monospace;
-      }
-    }
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+  }
+  .font-code {
+    font-family: "Fira Code", monospace;
+  }
+}
 
-    @layer components {
-      .btn-primary {
-        @apply bg-gradient-to-r from-emerald-400 to-blue-500 text-black px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-400/25 transition-all duration-300;
-      }
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-emerald-400 to-blue-500 text-black px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-400/25 transition-all duration-300;
+  }
 
-      .btn-secondary {
-        @apply border border-emerald-400 text-emerald-400 px-6 py-3 rounded-lg font-medium hover:bg-emerald-400 hover:text-black transition-all duration-300;
-      }
+  .btn-secondary {
+    @apply border border-emerald-400 text-emerald-400 px-6 py-3 rounded-lg font-medium hover:bg-emerald-400 hover:text-black transition-all duration-300;
+  }
 
-      .card-dark {
-        @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-emerald-400/50 transition-all duration-300;
-      }
+  .card-dark {
+    @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-emerald-400/50 transition-all duration-300;
+  }
 
-      .skill-badge {
-        @apply bg-gray-800 text-emerald-400 px-3 py-1 rounded-full text-sm font-medium border border-emerald-400/30;
-      }
+  .skill-badge {
+    @apply bg-gray-800 text-emerald-400 px-3 py-1 rounded-full text-sm font-medium border border-emerald-400/30;
+  }
 
-      .btn-glow-effect {
-        @apply hover:shadow-lg hover:shadow-green-400/25 transition-all duration-300;
-      }
-    }
+  .btn-glow-effect {
+    @apply hover:shadow-lg hover:shadow-green-400/25 transition-all duration-300;
+  }
+}
 
-    @layer utilities {
-      .text-gradient {
-        background: linear-gradient(45deg, #00FFC3, #00A6FB);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(45deg, #00ffc3, #00a6fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-      .glow-effect {
-        box-shadow: 0 0 20px rgba(0, 255, 195, 0.3);
-      }
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(0, 255, 195, 0.3);
+  }
 
-      .preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #0D0D0D;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        animation: preloaderFadeOut 0.8s ease-in-out 3.5s forwards;
-      }
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: preloaderFadeOut 0.8s ease-in-out 3.5s forwards;
+  }
 
-      .hexagon-container {
-        animation: dropIn 0.8s ease-out;
-      }
+  .hexagon-container {
+    animation: dropIn 0.8s ease-out;
+  }
 
-      .hexagon {
-        width: 80px;
-        height: 80px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: rotateHexagon 1.5s ease-in-out;
-      }
+  .hexagon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotateHexagon 1.5s ease-in-out;
+  }
 
-      .hexagon::before {
-        content: '';
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        border: 3px solid #00FFC3;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        box-shadow: 0 0 20px rgba(0, 255, 195, 0.3);
-      }
+  .hexagon::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #00ffc3;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    box-shadow: 0 0 20px rgba(0, 255, 195, 0.3);
+  }
 
-      .letter-a {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #00A6FB;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: letterSlideIn 0.6s ease-out 1.5s forwards;
-        text-shadow: 0 0 15px rgba(0, 166, 251, 0.5);
-      }
+  .letter-a {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00a6fb;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: letterSlideIn 0.6s ease-out 1.5s forwards;
+    text-shadow: 0 0 15px rgba(0, 166, 251, 0.5);
+  }
 
-      @keyframes dropIn {
-        0% { transform: translateY(-100px); opacity: 0; }
-        100% { transform: translateY(0); opacity: 1; }
-      }
 
-      @keyframes rotateHexagon {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
 
-      @keyframes letterSlideIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
+.main-content {
+  opacity: 0; /* Start hidden */
+  animation: mainContentFadeIn 0.8s ease-out 4s forwards; /* Trigger after preloader */
+}
 
-      @keyframes preloaderFadeOut {
-        0% { opacity: 1; transform: translateY(0); }
-        100% { opacity: 0; transform: translateY(-50px); visibility: hidden; }
-      }
 
-      .main-content {
-        opacity: 0;
-        transform: scale(0.95);
-        animation: mainContentFadeIn 0.8s ease-out 4s forwards;
-      }
 
-      @keyframes mainContentFadeIn {
-        0% { opacity: 0; transform: scale(0.95); }
-        100% { opacity: 1; transform: scale(1); }
-      }
+@keyframes mainContentFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      .skill-pill {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50px;
-        padding: 12px 20px;
-        margin: 8px;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
 
-      .skill-pill::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(0, 255, 195, 0.1), transparent);
-        transition: left 0.5s ease;
-      }
 
-      .skill-pill:hover::before {
-        left: 100%;
-      }
 
-      .skill-pill:hover {
-        transform: translateY(-3px) scale(1.05);
-        border-color: #00FFC3;
-        box-shadow: 0 10px 25px rgba(0, 255, 195, 0.2);
-      }
 
-      .skill-progress {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        background: conic-gradient(from 0deg, #00FFC3 0deg, #00FFC3 var(--progress), transparent var(--progress));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        position: relative;
-      }
 
-      .skill-progress::before {
-        content: '';
-        position: absolute;
-        inset: 8px;
-        border-radius: 50%;
-        background: #0D0D0D;
-      }
 
-      .skill-progress-text {
-        position: relative;
-        z-index: 1;
-        font-weight: bold;
-        color: #00FFC3;
-      }
+  .skill-pill {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
 
-      .approach-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 255, 195, 0.2);
-        border-radius: 16px;
-        padding: 24px;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-      }
+  .skill-pill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 255, 195, 0.1),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
 
-      .approach-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(0, 255, 195, 0.05), transparent);
-        transition: left 0.6s ease;
-      }
+  .skill-pill:hover::before {
+    left: 100%;
+  }
 
-      .approach-card:hover::before {
-        left: 100%;
-      }
+  .skill-pill:hover {
+    transform: translateY(-3px) scale(1.05);
+    border-color: #00ffc3;
+    box-shadow: 0 10px 25px rgba(0, 255, 195, 0.2);
+  }
 
-      .approach-card:hover {
-        transform: translateY(-8px);
-        border-color: #00FFC3;
-        box-shadow: 0 20px 40px rgba(0, 255, 195, 0.15);
-      }
+  .skill-progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      #00ffc3 0deg,
+      #00ffc3 var(--progress),
+      transparent var(--progress)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    position: relative;
+  }
 
-      .profile-card {
-        background: linear-gradient(135deg, rgba(0, 255, 195, 0.1) 0%, rgba(0, 166, 251, 0.05) 100%);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(0, 255, 195, 0.2);
-        border-radius: 24px;
-        position: relative;
-        overflow: hidden;
-      }
+  .skill-progress::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: #0d0d0d;
+  }
 
-      .profile-card::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: conic-gradient(from 0deg, transparent, rgba(0, 255, 195, 0.1), transparent);
-        animation: profileRotate 20s linear infinite;
-      }
+  .skill-progress-text {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: #00ffc3;
+  }
 
-      @keyframes profileRotate {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
+  .approach-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 195, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
 
-      .profile-content {
-        position: relative;
-        z-index: 2;
-        background: rgba(13, 13, 13, 0.8);
-        margin: 2px;
-        border-radius: 22px;
-        padding: 32px;
-      }
-    }
+  .approach-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 255, 195, 0.05),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .approach-card:hover::before {
+    left: 100%;
+  }
+
+  .approach-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ffc3;
+    box-shadow: 0 20px 40px rgba(0, 255, 195, 0.15);
+  }
+
+  .profile-card {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 255, 195, 0.1) 0%,
+      rgba(0, 166, 251, 0.05) 100%
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 255, 195, 0.2);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(0, 255, 195, 0.1),
+      transparent
+    );
+    animation: profileRotate 20s linear infinite;
+  }
+
+  .profile-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(13, 13, 13, 0.8);
+    margin: 2px;
+    border-radius: 22px;
+    padding: 32px;
+  }
+}
+
+@keyframes dropIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateHexagon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes letterSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preloaderFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+    visibility: hidden;
+  }
+}
+
+
+
+@keyframes profileRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}

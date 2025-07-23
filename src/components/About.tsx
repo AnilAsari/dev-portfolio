@@ -53,17 +53,17 @@ const About = () => {
           <div className="flex justify-center items-center h-full">
             <div className="relative group w-80 h-80 mt-0">
               {/* Badge */}
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-full px-4 py-2 shadow-lg">
+              {/* <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gray-900/90 backdrop-blur-sm border border-gray-700/50 rounded-full px-4 py-2 shadow-lg">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
                   <span className="text-xs text-gray-300 font-medium tracking-wider">
                     AVAILABLE FOR HIRE
                   </span>
                 </div>
-              </div>
+              </div> */}
 
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=280&h=280&fit=crop&crop=face&auto=format"
+                src=""
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full border-4 border-gray-800 shadow-xl group-hover:border-emerald-500/30 transition-all duration-500 group-hover:shadow-emerald-500/20"
               />

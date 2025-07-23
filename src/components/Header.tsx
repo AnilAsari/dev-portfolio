@@ -5,16 +5,27 @@ const Header: React.FC = () => {
   try {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const scrollToSection = (sectionId: string) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-      setIsMenuOpen(false);
-    };
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (!element) return;
+
+  const isMobile = window.innerWidth < 768; // Tailwind 'md' breakpoint
+
+  const headerOffset = isMobile ? 236 : 60; // Offset only for mobile
+  const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+  const offsetPosition = elementPosition - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+
+  setIsMenuOpen(false);
+};
+
 
     return (
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800" data-name="header" data-file="components/Header.js">
+      <header className="sticky top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800" data-name="header" data-file="components/Header.js">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-xl font-bold text-gradient">
