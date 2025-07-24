@@ -44,7 +44,7 @@ Built real-time views for US and international financial metrics.`,
       title: "PCM (Market Approach)",
       company: "Kroll",
       description:
-        "Developed internal portal for employee data, payroll, and appraisals with strong access control.",
+        "Built key features for a Market Approach module to value private companies using comparable multiples in a Private Capital Markets platform.",
       role: "Full-Stack Developer",
       techStack: ["React js", "C#","Web API","SQL Server",".NET Core", "Entity Framework", "Git"],
       challenges: "Implemented secure roles, data flows, and compliance logic.",
